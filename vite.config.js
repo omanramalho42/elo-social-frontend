@@ -13,7 +13,7 @@ export default defineConfig(({ mode }) => {
       strictPort: true,
       proxy: {
         "/api": {
-          target: process.env.VITE_PUBLIC_KEY,
+          target: process.env.API_KEY,
           changeOrigin: true,
         },
       },
