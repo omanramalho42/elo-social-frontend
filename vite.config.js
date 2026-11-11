@@ -13,8 +13,9 @@ export default defineConfig(({ mode }) => {
       strictPort: true,
       proxy: {
         "/api": {
-          target: process.env.API_KEY,
+          target: env.API_KEY || "http://localhost:3000",
           changeOrigin: true,
+          secure: true,
         },
       },
     },
