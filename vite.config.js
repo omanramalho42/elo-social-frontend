@@ -8,11 +8,11 @@ export default defineConfig({
     strictPort: true,
     proxy: {
       "/api": {
-        target: process.env.SITE_URL || "http://localhost:3000",
+        target: process.env.VITE_PUBLIC_KEY || "http://localhost:3000",
         changeOrigin: true,
         configure: (proxy) =>
           proxy.on("proxyReq", (req) =>
-            req.setHeader("origin", process.env.SITE_URL || "http://localhost:3000"),
+            req.setHeader("origin", process.env.VITE_PUBLIC_KEY || "http://localhost:3000"),
           ),
       },
     },
