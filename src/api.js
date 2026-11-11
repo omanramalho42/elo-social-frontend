@@ -1,10 +1,10 @@
 // Todas as telas usam esta função para conversar com a API. As chaves do Supabase ficam no servidor.
-const API_URL = import.meta.env.VITE_API_URL;
+// const API_URL = import.meta.env.VITE_API_URL;
 
 export async function api(caminho, opcoes = {}) {
   let resposta;
   try {
-    resposta = await fetch(`${API_URL}/api${caminho}`, {
+    resposta = await fetch(`/api${caminho}`, {
       ...opcoes,
       credentials: "include",
       headers: {
